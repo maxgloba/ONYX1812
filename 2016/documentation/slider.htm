@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Slider</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/onyx.slider.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="slider effect-slide">
+				<div class="slides">
+					<div class="slide active"><img src="img/about_01.png" alt=""></div>
+					<div class="slide"><img src="img/about_02.png" alt=""></div>
+					<div class="slide"><img src="img/about_03.png" alt=""></div>
+					<div class="slide"><img src="img/about_04.png" alt=""></div>
+				</div>
+				<span class="slider-btn slider-next">></span>
+				<span class="slider-btn slider-prev"><</span>
+			</div>
+		</div>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script src="js/onyx.slider.js"></script>
+		<script>
+			onyxSlider.slide();
+		</script>
+	</body>
+</html>

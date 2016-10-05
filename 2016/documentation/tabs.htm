@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Tabs</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<script src="js/jquery.min.js"></script>
+		<script>
+			$(document).ready( function() {
+				$('.tab-item').click(function(){
+					var rel = jQuery(this).attr('rel');
+					$('.tab-item, .tab-panel').removeClass('active');
+					$(this).toggleClass('active');
+					$('.tab-panel-'+rel).toggleClass('active');
+				});
+			});
+		</script>
+		<style>
+			.tabs{
+				font-size: 16px;
+			}
+			.tab-item{
+				display: inline-block;
+				cursor: pointer;
+				padding: 5px 10px;
+				background-color: #999;
+				color: #fff;
+				margin: 5px;
+			}
+			.tab-item.active, .tab-item:hover{
+				background-color: #666;
+			}
+			.tab-panel{
+				display: none;
+				padding: 10px;
+			}
+			.tab-panel.active{
+				display: block;
+			}
+		</style>
+		<div class="container">
+			<div class="tabs">
+				<div class="tab-menu">
+					<div class="tab-item active" rel="1">Tab 1</div>
+					<div class="tab-item" rel="2">Tab 2</div>
+					<div class="tab-item" rel="3">Tab 3</div>
+					<div class="tab-item" rel="4">Tab 4</div>
+					<div class="tab-item" rel="5">Tab 5</div>
+				</div>
+				<div class="tab-desc">
+					<div class="tab-panel tab-panel-1 active">
+						Tab 1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolore suscipit impedit non, possimus ducimus, deserunt architecto recusandae ea temporibus sint quos pariatur, laudantium similique dolorem asperiores voluptatibus debitis! Eveniet maxime tempora quam atque inventore vitae, blanditiis qui enim expedita rem, dolorem excepturi architecto recusandae. Nihil architecto fugiat voluptate ad.
+					</div>
+					<div class="tab-panel tab-panel-2">
+						Tab 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae earum sint incidunt repudiandae quos sunt nihil unde fugiat at hic ducimus, aliquid nemo atque fugit delectus nostrum facere qui, alias autem. Asperiores qui aspernatur, a ratione ut minus dolores, praesentium, provident cupiditate, sapiente pariatur quisquam. Illo, consectetur. Nobis, soluta, reiciendis.
+					</div>
+					<div class="tab-panel tab-panel-3">
+						Tab 3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore at debitis, blanditiis voluptatibus. Laudantium, asperiores labore quis, architecto esse eum commodi itaque ratione delectus, voluptatum ad perspiciatis, nesciunt amet. Excepturi voluptate dolore quidem tempore. Minima architecto magni, nulla, ipsum maxime expedita enim nemo sequi voluptatem quos fugit amet eaque sint!
+					</div>
+					<div class="tab-panel tab-panel-4">
+						Tab 4 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis molestias quisquam officia laborum, hic reiciendis deleniti tempora asperiores non, voluptates distinctio dolore suscipit quis reprehenderit exercitationem. Quod assumenda iusto consequatur quia amet, reiciendis iste quo minima quas doloremque voluptatem quaerat praesentium! Eum eveniet eos ea eligendi tempora, nihil deserunt. Cum!
+					</div>
+					<div class="tab-panel tab-panel-5">
+						Tab 5 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi neque maiores eum accusamus incidunt reprehenderit quas quisquam alias minus tempora mollitia consequuntur numquam totam nisi culpa vitae nulla, quaerat fugit tempore ad esse excepturi iure et aut. Et laudantium porro nihil dolore, accusantium dolorem, consectetur placeat maiores voluptates, eius beatae.
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<code>
+				<div class="cssc">$(document).ready( function() {</div>
+					<div class="cssp">
+						<div class="cssc">$('.tab-item').click(function(){</div>
+							<div class="cssp">var rel = jQuery(this).attr('rel');</div>
+							<div class="cssp">$('.tab-item, .tab-panel').removeClass('active');</div>
+							<div class="cssp">$(this).toggleClass('active');</div>
+							<div class="cssp">$('.tab-panel-'+rel).toggleClass('active');</div>
+						<div class="cssc">});</div>
+					</div>
+				<div class="cssc">});</div>
+			</code>
+		</div>
+		<div class="container">
+			<code>
+				<div class="cssc">.tabs{</div>
+					<div class="cssp">font-size: 20px;</div>
+				<div class="cssc">}</div>
+				<div class="cssc">.tab-item{</div>
+					<div class="cssp">display: inline-block;</div>
+					<div class="cssp">cursor: pointer;</div>
+					<div class="cssp">padding: 5px 10px;</div>
+					<div class="cssp">background-color: #999;</div>
+					<div class="cssp">color: #fff;</div>
+					<div class="cssp">margin: 5px;</div>
+				<div class="cssc">}</div>
+				<div class="cssc">.tab-item.active, .tab-item:hover{</div>
+					<div class="cssp">background-color: #666;</div>
+				<div class="cssc">}</div>
+				<div class="cssc">.tab-panel{</div>
+					<div class="cssp">display: none;</div>
+					<div class="cssp">padding: 10px;</div>
+				<div class="cssc">}</div>
+				<div class="cssc">.tab-panel.active{</div>
+					<div class="cssp">display: block;</div>
+				<div class="cssc">}</div>
+			</code>
+		</div>
+	</body>
+</html>

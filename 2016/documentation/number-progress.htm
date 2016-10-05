@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Number progress</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			.num-box{
+				display: block;
+				font-size: 40px;
+			}
+			.btn{
+				background: #999;
+				color: #fff;
+				border: #ccc;
+				padding:5px 10px;
+				cursor: pointer;
+			}
+			.btn:hover{
+				background: #666;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<button class="btn btngo">Number go</button>
+			<button class="btn btnback">Number back</button>
+			<div class="num-box">
+				<span class="num" number="75">0</span>
+				<span class="num" number="45">0</span>
+				<span class="num" number="97">0</span>
+			</div>
+		</div>
+		<div class="container">
+			<code>
+				<pre>
+					$('.btngo').click(function(){
+						$(".num").each(function(){
+							var number = jQuery(this).attr('number');
+							$(this).animate({num:number},{
+								duration:1000,
+								step:function (num){
+									this.innerHTML=(num).toFixed( 0 );
+								}
+							});
+						});
+					});
+					$('.btnback').click(function(){
+						$(".num").each(function(){
+							$(this).animate({num:0},{
+								duration:200,
+								step:function (num){
+									this.innerHTML=(num).toFixed( 0 );
+								}
+							});
+						});
+					});
+				</pre>
+			</code>
+		</div>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script>
+			$(window).load(function(){
+				$(".num").each(function(){
+					var number = jQuery(this).attr('number');
+					$(this).animate({num:number},{
+						duration:1000,
+						step:function (num){
+							this.innerHTML=(num).toFixed( 0 );
+						}
+					});
+				});
+			});
+			$('.btngo').click(function(){
+				$(".num").each(function(){
+					var number = jQuery(this).attr('number');
+					$(this).animate({num:number},{
+						duration:1000,
+						step:function (num){
+							this.innerHTML=(num).toFixed( 0 );
+						}
+					});
+				});
+			});
+			$('.btnback').click(function(){
+				$(".num").each(function(){
+					$(this).animate({num:0},{
+						duration:1000,
+						step:function (num){
+							this.innerHTML=(num).toFixed( 0 );
+						}
+					});
+				});
+			});
+		</script>
+	</body>
+</html>

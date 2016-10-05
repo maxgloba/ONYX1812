@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Custom Select</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="custom-select">
+				<span>Action</span>
+				<ul>
+					<li>Action</li>
+					<li>Another action</li>
+					<li>Something else here</li>
+					<li>Separated link</li>
+				</ul>
+			</div>
+			<style>
+				.custom-select{
+					cursor: pointer;
+					width: 200px;
+					text-align: right;
+					position: relative;
+				}
+				.custom-select span{
+					color: #fff;
+					font-size: 16px;
+					padding: 4px 15px;
+					display: block;
+					position: relative;
+					z-index: 2;
+					background-color: #293d56;
+				}
+				.custom-select ul{
+					position: relative;
+					z-index: 1;
+					background-color: #293d56;
+					margin: 0;
+					position: absolute;
+					right: 0;
+					transform: translate(0%, -200%);
+					transition: all 0.5s ease 0s;
+					width: 100%;
+					max-width: 200px;
+					padding: 0;
+					box-sizing: border-box;
+				}
+				.custom-select.active ul{
+					transform: translate(0%, 0%);
+				}
+				.custom-select li{
+					display: block;
+					float: none !important;
+					line-height: 2;
+					color: #fff;
+					padding: 0 15px;
+				}
+				.custom-select li:hover{
+					background-color: #000;
+				}
+			</style>
+		</div>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script>
+			$('.custom-select').on('click', function(){
+				$(this).toggleClass('active');
+			});
+			$('.custom-select li').on('click', function(){
+				var liVal = $(this).text();
+				$('.custom-select span').text(liVal);
+			});
+		</script>
+	</body>
+</html>

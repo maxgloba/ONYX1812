@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Number progress</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			.cardio{
+				background:#24282e;
+				height:108px;
+				width:475px;
+				border-radius:4px;
+				border:1px solid #363c43;
+				overflow:hidden;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="cardio">
+				<svg width="470" height="104" xmlns="http://www.w3.org/2000/svg" version="1.1">
+					<path d="M 0.261 64.261 L 20.782 64.945 C 20.782 64.945 27.353 58.113 31.726 57.421 C 33.25 57.18 43.268 62.508 44.723 64.603 C 48.014 69.341 50.195 81.02 50.195 81.02 L 54.983 29.034 L 65.244 70.759 L 72.084 65.287 L 94.999 65.287 C 94.999 65.287 101.454 59.113 105.601 58.105 C 108.583 57.38 117.642 63.256 119.282 64.603 C 120.685 65.755 125.096 81.02 125.096 81.02 L 130.568 28.692 C 130.568 28.692 140.487 70.759 140.487 71.101 C 140.487 71.443 148.011 64.945 148.011 64.945 L 169.558 65.287 C 169.558 65.287 175.718 58.846 179.818 57.763 C 181.578 57.298 192.101 62.976 193.841 64.603 C 195.621 66.267 199.313 80.336 199.313 80.336 L 204.443 29.034 L 214.362 70.417 L 223.254 64.945 L 244.459 64.603 C 244.459 64.603 252.78 58.001 254.377 57.763 C 257.229 57.339 265.492 62.722 268.4 64.945 C 270.807 66.785 274.214 80.678 274.214 80.678 L 279.686 29.376 L 289.605 71.101 L 297.813 64.603 L 319.702 64.603 C 319.702 64.603 327.243 57.327 329.62 57.421 C 331.47 57.494 343.643 64.945 343.643 64.945 L 349.115 81.362 L 354.245 29.718 L 364.164 70.759 L 373.398 64.945 L 394.261 64.945 C 394.261 64.945 401.302 57.337 404.521 57.421 C 407.292 57.493 415.251 62.813 418.544 64.261 C 420.827 65.265 424.016 81.02 424.016 81.02 L 429.146 29.718 L 439.407 70.759 L 447.615 64.945 L 468.136 65.287 L 474.634 59.473" stroke-width="1" fill="none" id="theMotionPath" style='stroke: #9fff00' />
+					<rect x="0" y="-52" width="10" height="104" stroke-width="0" fill="#24282e">
+						<animateMotion dur="4s"  repeatCount="indefinite" attributeName="transform">
+							<mpath xlink:href="#theMotionPath"/>
+						</animateMotion>
+					</rect>
+					<pattern id="tile-ww" patternUnits="" width="6" height="6">
+						<image xlink:href="img/circul-cardio.png" x="0" y="0" width="6" height="6"></image>
+					</pattern>
+					<circle cx="" cy="" r="4"  style="stroke-width: 0; fill: url(#tile-ww);">
+						<animateMotion dur="4s" repeatCount="indefinite">
+							<mpath xlink:href="#theMotionPath"/>
+						</animateMotion>
+					</circle>
+				</svg>
+			</div>
+		</div>
+	</body>
+</html>

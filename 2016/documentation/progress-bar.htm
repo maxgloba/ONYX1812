@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Number progress</title>
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+		<style>
+			/*-------------------------
+				medications-progress
+			---------------------------*/
+			.medications-progress{
+				padding:10px;
+				background: #000;
+				text-align: center;
+			}
+			.medications-progress .percent{
+				font-size:48px;
+				color:rgb(234, 234, 234);
+				font-weight:bold;
+				line-height:1.2;
+				text-shadow:0px -1px 0px rgba(97, 108, 121, 0.48);
+				margin-bottom:2px;
+			}
+			.medications-progress .percent .percent-icon{
+				opacity:.9;
+				font-size:26px;
+				color:rgb(219, 219, 219);
+				font-weight:400;
+				line-height:1.7;
+				margin-left:-10px;
+				display:inline-block;
+				vertical-align:top;
+			}
+			.medications-progress .progressbar {
+				cursor: pointer;
+				margin: 0 auto 20px;
+				position: relative;
+				width: 100px;
+			}
+			.medications-progress .progressbar .ui-widget-content{
+				background:#fff;
+				width:15px;
+				height:152px;
+				border-radius:0;
+				border:none;
+				left:78px;
+			}
+			.medications-progress .progressbar .ui-widget-content::before{
+				background:rgba(0, 0, 0, 0) url("img/progress-bg.png") repeat scroll 0 0;
+				content:"";
+				position:absolute;
+				width:64px;
+				height:153px;
+				left:-78px;
+				top:0;
+			}
+			.medications-progress .progressbar.red-bar .ui-widget-content{
+				background-color:#f15d40;
+			}
+			.medications-progress .progressbar.green-bar .ui-widget-content{
+				background-color:#86c440;
+			}
+			.medications-progress .progressbar.yellow-bar .ui-widget-content{
+				background-color:#fab316;
+			}
+			.medications-progress .progressbar.violet-bar .ui-widget-content{
+				background-color:#6f52a2;
+			}
+			.medications-progress .progressbar .ui-state-default:before,
+			.medications-progress .progressbar .ui-state-default:after{
+				width:10px;
+				height:19px;
+				font-family:'FontAwesome';
+				color:#b4bec9;
+				font-size:24px;
+				text-decoration:none;
+				top:0;
+				position:absolute;
+				line-height:1.3;
+				vertical-align:top;
+				display:inline-block;
+				cursor:pointer;
+			}
+			.medications-progress .progressbar .ui-state-active:before,
+			.medications-progress .progressbar .ui-state-active:after,
+			.medications-progress .progressbar .ui-state-default:hover:before,
+			.medications-progress .progressbar .ui-state-default:hover:after{
+				color:#18abdb;
+			}
+			.medications-progress .progressbar .ui-state-default:before{
+				content:"\f0da";
+				left:0;
+			}
+			.medications-progress .progressbar .ui-state-default:after{
+				content:"\f0d9";
+				right:0;
+			}
+
+			.medications-progress .progressbar .ui-state-default,
+			.medications-progress .progressbar .ui-widget-content .ui-state-default,
+			.medications-progress .progressbar .ui-widget-header .ui-state-default{
+				transition:all 0.15s ease;
+				-webkit-transition:all 0.15s ease;
+				background:none;
+				border:medium none;
+				border-radius:0;
+				display:block;
+				height:17px;
+				left:50%;
+				outline:medium none;
+				transform:translate(-50%, 8%);
+				-webkit-transform:translate(-50%, 8%);
+				width:30px;
+				z-index:4;
+				text-decoration:none;
+				margin:0;
+			}
+			.medications-progress .shadow{
+				background:rgba(0, 0, 0, 0.3) none repeat scroll 0 0;
+				left:-78px;
+				position:absolute;
+				width:100px;
+				z-index:2;
+				top:0;
+				-webkit-transition:all 0.15s ease;
+				transition:all 0.15s ease;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="medications-progress">
+				<div class="row">
+					<div class="col-xs-3">
+						<div class="percent">
+							<span class="barFirstVal">75</span>
+							<span class="percent-icon">%</span>
+						</div>
+						<div class="progressbar red-bar">
+							<div class="barFirst">
+								<div class="shadow barFirstShadow"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<pre>
+				<code>
+					&lt;link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/&gt;
+					&lt;script src="js/jquery-ui.min.js"&gt;&lt;/script&gt;
+
+					$(".barFirst").slider({
+						value: 75,
+						min: 0,
+						max: 100,
+						step: 1,
+						orientation: "vertical",
+						create: function(event, ui){
+							val = $(".barFirst").slider("value");
+							valRes = 100 - val;
+							$(".barFirstVal").html(val);
+							$(".barFirstShadow").css("height", valRes+"%" );
+						},
+						slide:function(event, ui){
+							valUiRes = 100 - ui.value;
+							$(".barFirstVal").html(ui.value);
+							$(".barFirstShadow").css("height", valUiRes+"%" );
+						}
+					});
+				</code>
+			</pre>
+		</div>
+		<link href="css/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script src="js/jquery-2.2.4.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script>
+			$(".barFirst").slider({
+				value: 75,
+				min: 0,
+				max: 100,
+				step: 1,
+				orientation: "vertical",
+				create: function(event, ui){
+					val = $(".barFirst").slider("value");
+					valRes = 100 - val;
+					$(".barFirstVal").html(val);
+					$(".barFirstShadow").css("height", valRes+"%" );
+				},
+				slide:function(event, ui){
+					valUiRes = 100 - ui.value;
+					$(".barFirstVal").html(ui.value);
+					$(".barFirstShadow").css("height", valUiRes+"%" );
+				}
+			});
+		</script>
+	</body>
+</html>
